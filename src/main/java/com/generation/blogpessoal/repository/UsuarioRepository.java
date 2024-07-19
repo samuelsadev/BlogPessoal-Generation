@@ -1,6 +1,6 @@
-package com.generation.blogPessoal.repository;
+package com.generation.blogpessoal.repository;
 
-import com.generation.blogPessoal.model.Usuario;
+import com.generation.blogpessoal.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

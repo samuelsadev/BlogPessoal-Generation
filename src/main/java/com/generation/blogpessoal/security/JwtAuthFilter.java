@@ -1,4 +1,4 @@
-package com.generation.blogPessoal.security;
+package com.generation.blogpessoal.security;
 
 import java.io.IOException;
 

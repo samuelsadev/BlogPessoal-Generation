@@ -1,4 +1,4 @@
-package com.generation.blogPessoal.configuration;
+package com.generation.blogpessoal.configuration;
 
 import io.swagger.v3.oas.models.ExternalDocumentation;
 import io.swagger.v3.oas.models.OpenAPI;
@@ -33,26 +33,28 @@ public class SwaggerConfig {
                         .url("https://github.com/samuelsadev/BlogPessoal-Generation"));
     }
 
-    private ApiResponse createApiResponse(String message) {
-        return new ApiResponse().description(message);
+    @Bean
+    OpenApiCustomizer customerGlobalHeaderOpenApiCustomiser() {
+
+        return openApi -> {
+            openApi.getPaths().values().forEach(pathItem -> pathItem.readOperations().forEach(operation -> {
+
+                ApiResponses apiResponses = operation.getResponses();
+
+                apiResponses.addApiResponse("200", createApiResponse("Sucesso!"));
+                apiResponses.addApiResponse("201", createApiResponse("Objeto Persistido!"));
+                apiResponses.addApiResponse("204", createApiResponse("Objeto Excluído!"));
+                apiResponses.addApiResponse("400", createApiResponse("Erro na Requisição!"));
+                apiResponses.addApiResponse("401", createApiResponse("Acesso Não Autorizado!"));
+                apiResponses.addApiResponse("403", createApiResponse("Acesso Proibido!"));
+                apiResponses.addApiResponse("404", createApiResponse("Objeto Não Encontrado!"));
+                apiResponses.addApiResponse("500", createApiResponse("Erro na Aplicação!"));
+
+            }));
+        };
     }
 
-    @Bean
-    OpenApiCustomizer customerGlobalHeaderOpenApiCustomizer() {
-        return openApi -> {
-            openApi.getPaths().values().forEach(pathItem -> pathItem.readOperations()
-                    .forEach(operation -> {
-                        ApiResponses apiResponses = operation.getResponses();
-
-                        apiResponses.addApiResponse("200", createApiResponse("Sucesso!"));
-                        apiResponses.addApiResponse("201", createApiResponse("Objeto Persistido!"));
-                        apiResponses.addApiResponse("204", createApiResponse("Objeto Excluído!"));
-                        apiResponses.addApiResponse("400", createApiResponse("Erro na Requisição!"));
-                        apiResponses.addApiResponse("401", createApiResponse("Acesso Não Autorizado!"));
-                        apiResponses.addApiResponse("403", createApiResponse("Acesso Proibido!"));
-                        apiResponses.addApiResponse("404", createApiResponse("Objeto Não Encontrado!"));
-                        apiResponses.addApiResponse("500", createApiResponse("Erro na Aplicação!"));
-                    }));
-        };
+    private ApiResponse createApiResponse(String message) {
+        return new ApiResponse().description(message);
     }
 }

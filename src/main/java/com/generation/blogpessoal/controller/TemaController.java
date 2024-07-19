@@ -1,4 +1,4 @@
-package com.generation.blogPessoal.controller;
+package com.generation.blogpessoal.controller;
 
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +18,8 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 import java.util.Optional;
 
-import com.generation.blogPessoal.model.Tema;
-import com.generation.blogPessoal.repository.TemaRepository;
+import com.generation.blogpessoal.model.Tema;
+import com.generation.blogpessoal.repository.TemaRepository;
 
 @RestController
 @RequestMapping("/temas")

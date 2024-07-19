@@ -1,8 +1,8 @@
-package com.generation.blogPessoal.controller;
+package com.generation.blogpessoal.controller;
 
-import com.generation.blogPessoal.model.Postagem;
-import com.generation.blogPessoal.repository.PostagemRepository;
-import com.generation.blogPessoal.repository.TemaRepository;
+import com.generation.blogpessoal.model.Postagem;
+import com.generation.blogpessoal.repository.PostagemRepository;
+import com.generation.blogpessoal.repository.TemaRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.net.http.HttpResponse;
 import java.util.List;
 import java.util.Optional;
 
