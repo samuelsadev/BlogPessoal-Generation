@@ -1,4 +1,4 @@
-package com.generation.blogPessoal.security;
+package com.generation.blogpessoal.security;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 

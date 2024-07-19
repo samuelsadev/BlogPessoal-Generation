@@ -1,6 +1,6 @@
-package com.generation.blogPessoal.security;
+package com.generation.blogpessoal.security;
 
-import com.generation.blogPessoal.model.Usuario;
+import com.generation.blogpessoal.model.Usuario;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
